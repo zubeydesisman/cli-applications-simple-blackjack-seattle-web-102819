@@ -39,10 +39,10 @@ end
 
 def hit?(card_total)
   prompt_user
-  case user_input
-  if "h"
+  user_input = get_user_input
+  if user_input == "h"
     card_total += deal_card
-  elsif "s"
+  elsif user_input == "s"
     card_total
   else
     invalid_command
@@ -58,12 +58,13 @@ def prompt_user
   "Type 'h' to hit or 's' to stay"
 end
 
-def user_input
+def get_user_input
   gets.chomp.strip
 end
 
 def end_game(card_total)
+  puts "Sorry"
   display_card_total(card_total)
-  puts "Thanks for playing!"
+  puts "Thanks for playing"
 end
     

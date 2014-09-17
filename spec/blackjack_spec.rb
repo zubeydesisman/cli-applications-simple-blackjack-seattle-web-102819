@@ -10,7 +10,7 @@ end
 
 describe "#display_card_total" do
   it "accepts one argument, the card total" do
-    expect(display_card_total(7)).to_not raise_error(ArgumentError)
+    expect { display_card_total(7) }.to_not raise_error
   end
 
   it "prints the value of the cards to the screen" do
@@ -26,7 +26,7 @@ end
 
 describe "#welcome" do
   it "prints a welcome message to screen" do
-    expect($stdout).to receive(:puts).with("Your cards add up to 12")
+    expect($stdout).to receive(:puts).with("Welcome to the Blackjack Table")
     welcome
   end
 end
@@ -40,25 +40,21 @@ describe "#initial_round" do
   it "returns the sum of two cards added togther" do
     20.times do
       two_cards = initial_round
-      expect(two_cards).to be > 2
+      expect(two_cards).to be > 1
       expect(two_cards).to be < 23
     end
   end
 end
 
-describe "#lost" do
-  it "accepts one argument, the card total" do
-    expect(lost(7)).to_not raise_error(ArgumentError)
+describe "#end_game" do
+  it "prints an apology to screen" do
+    expect(end_game(27)).to match_stdout("Sorry")
   end
-
   it "calls on the '#display_card_total' to print final sum of cards" do
-    expect($stdout).to receive(:puts).with("Your cards add up to 23")
-    lost(23)
+    expect(end_game(27)).to match_stdout("Your cards add up to 27")
   end
-
   it "thanks user for playing" do
-    expect($stdout).to receive(:puts).with("Thanks for playing!")
-    lost(23)
+    expect(end_game(27)).to match_stdout("Thanks for playing")
   end
 end
 
