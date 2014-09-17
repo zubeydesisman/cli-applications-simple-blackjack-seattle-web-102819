@@ -1,27 +1,13 @@
-##########
-# runner #
-##########
-
-def runner
-  welcome
-  card_total = initial_round
-  until card_total > 21
-    card_total = hit?(card_total)
-    display_card_total(card_total)
-  end
-  end_game(card_total)
-end
-
 ##################
 # shared methods #
 ##################
 
-def display_card_total(card_total)
-  puts "Your cards add up to #{card_total}"
-end
-
 def deal_card
   rand(1..11)
+end
+
+def display_card_total(card_total)
+  puts "Your cards add up to #{card_total}"
 end
 
 ##########
@@ -42,6 +28,14 @@ def initial_round
   return first_round
 end
 
+def end_game(card_total)
+  puts "Sorry, you hit #{card_total}. Thanks for playing!"
+end
+
+def get_user_input
+  gets.chomp.strip
+end
+
 def hit?(card_total)
   prompt_user
   user_input = get_user_input
@@ -56,14 +50,20 @@ end
 
 def invalid_command
   puts "Sorry, not a valid command"
-  hit?(card_total)
+  get_user_input
 end
 
-def get_user_input
-  gets.chomp.strip
-end
+##########
+# runner #
+##########
 
-def end_game(card_total)
-  puts "Sorry, you hit #{card_total}. Thanks for playing!"
+def runner
+  welcome
+  card_total = initial_round
+  until card_total > 21
+    card_total = hit?(card_total)
+    display_card_total(card_total)
+  end
+  end_game(card_total)
 end
     

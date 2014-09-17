@@ -31,6 +31,13 @@ describe "#welcome" do
   end
 end
 
+describe "#prompt_user" do
+  it "gives instructions for hitting or staying" do
+    expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
+    prompt_user
+  end
+end
+
 describe "#initial_round" do
   it "calls on the '#display_card_total' to print sum of cards" do
     expect($stdout).to receive(:puts).with(/Your cards add up to /)
@@ -53,13 +60,6 @@ describe "#end_game" do
   end
 end
 
-describe "#prompt_user" do
-  it "gives instructions for hitting or staying" do
-    expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
-    prompt_user
-  end
-end
-
 describe "#get_user_input" do
   it "returns the value of a `gets.chomp` method" do
     ["h", "s", "exit"].each do |string|
@@ -74,7 +74,7 @@ end
 describe "#hit?" do
   before(:each) do
     def get_user_input
-      "s"
+        "s"
     end
   end
   it "calls on the '#prompt_user' method" do
@@ -96,8 +96,27 @@ describe "#hit?" do
     end
     expect(hit?(7)).to be > 7
   end
+
 end
 
 describe "#runner" do
+  before(:each) do
+    def get_user_input
+      "h"
+    end
+    def initial_round
+      23
+    end
+  end
+
+  it "calls on the #welcome method, 
+  then on the #initial_round method, 
+  then calls #hit? and  #display_card_total methods
+  -until- the card sum is greater than 21,
+  then calls on the #end_game method" do
+    expect($stdout).to receive(:puts).with("Welcome to the Blackjack Table")
+    expect($stdout).to receive(:puts).with("Sorry, you hit 23. Thanks for playing!")
+    runner
+  end
 
 end
