@@ -1,5 +1,5 @@
 ---
-tags: conditionals, cli
+tags: conditionals, cli, looping, loops
 language: ruby
 resources: 1
 ---
@@ -8,9 +8,9 @@ resources: 1
 
 ## Background
 
-In [Blackjack](http://en.wikipedia.org/wiki/Blackjack) the goal is to have a hand that is closer to 21 than the hand of the dealers without ever exceeding a card total of 21. 
+In [Blackjack](http://en.wikipedia.org/wiki/Blackjack) the goal is to have a hand that is closer to 21 than the dealer's hand without ever exceeding a card total of 21. 
 
-However, in this simplified version of Blackjack, we'll cut out that "compare with the dealer's hand" part and pretend that the goal of the game is to have a card total of, or very close to, (but never exceeding) 21.
+However, in this simplified version of Blackjack, we'll cut out that "compare with the dealer's hand" part and pretend that the goal of the game is to have a card total of, or very close to, but never exceeding, 21.
 
 To start, a player gets dealt two cards, each of which have values between 1-11. If they happened to get unlucky and have a sum of 22 (two 11-value cards), then they lose. Otherwise, they can decide to hit or to stay.
 
@@ -20,11 +20,11 @@ If you're thinking, "But now there's no way to win!", then you'd be right. In th
 
 ## Objective
 
-Practice conditional logic including nested conditionals by making a command line game that plays blackjack. 
+Practice conditional logic and loops by making a command line game that plays blackjack. 
 
 # Instructions
 
-Your code will go in `lib/blackjack.rb`. This lab is test driven so just run `rspec` to get started.
+All your code will go in `lib/blackjack.rb`. This lab is test driven so just run `rspec` to get started.
 
 Once every test is working, run  `ruby lib/runner.rb` from the root directory to play!
 
