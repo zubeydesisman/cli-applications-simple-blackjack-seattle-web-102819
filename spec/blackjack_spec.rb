@@ -107,22 +107,6 @@ describe "#runner" do
   then calls #hit? and  #display_card_total methods
   -until- the card sum is greater than 21,
   then calls on the #end_game method" do
-    def get_user_input
-      "h"
-    end
-    def initial_round
-      23
-    end
-    expect($stdout).to receive(:puts).with("Welcome to the Blackjack Table")
-    expect($stdout).to receive(:puts).with("Sorry, you hit 23. Thanks for playing!")
-    runner
-  end
-
-  it "calls on the #welcome method, 
-  then on the #initial_round method, 
-  then calls #hit? and  #display_card_total methods
-  -until- the card sum is greater than 21,
-  then calls on the #end_game method" do
     # ignore the boxed code below, it's just there so that the spec can predict the outcome
     ##########################################
     def get_user_input                       #
