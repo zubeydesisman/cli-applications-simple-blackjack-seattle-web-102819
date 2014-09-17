@@ -55,7 +55,7 @@ def invalid_command
 end
 
 def prompt_user
-  "Type 'h' to hit or 's' to stay"
+  puts "Type 'h' to hit or 's' to stay"
 end
 
 def get_user_input
@@ -63,8 +63,6 @@ def get_user_input
 end
 
 def end_game(card_total)
-  puts "Sorry"
-  display_card_total(card_total)
-  puts "Thanks for playing"
+  puts "Sorry, you hit #{card_total}. Thanks for playing!"
 end
     

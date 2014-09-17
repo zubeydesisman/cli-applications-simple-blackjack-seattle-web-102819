@@ -1,3 +1,5 @@
+require "pry"
+
 describe "#deal_card" do
   it "generates a random number between 1-11" do
     20.times do 
@@ -47,14 +49,9 @@ describe "#initial_round" do
 end
 
 describe "#end_game" do
-  it "prints an apology to screen" do
-    expect(end_game(27)).to match_stdout("Sorry")
-  end
-  it "calls on the '#display_card_total' to print final sum of cards" do
-    expect(end_game(27)).to match_stdout("Your cards add up to 27")
-  end
-  it "thanks user for playing" do
-    expect(end_game(27)).to match_stdout("Thanks for playing")
+  it "prints apology, card total, and thank you message" do
+    expect($stdout).to receive(:puts).with("Sorry, you hit 27. Thanks for playing!")
+    end_game(27)
   end
 end
 
@@ -65,10 +62,9 @@ describe "#prompt_user" do
   end
 end
 
-describe "#user_input" do
+describe "#get_user_input" do
   it "returns the value of a `gets.chomp` method" do
-    my_user_input = user_input
-    my_user_input.stub!(:gets) { "s\n" }
-    expect(my_user_input).to eq("s")
+    my_input = get_user_input.stub!(:gets) { "s\n" }
+    expect(my_input).to eq("s")
   end
 end
