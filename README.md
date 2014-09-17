@@ -16,6 +16,8 @@ To start, a player gets dealt two cards, each of which have values between 1-11.
 
 If they hit, they get dealt another card. If the sum of their three cards exceeds 21, they've lost. If it does not, they can decide to hit or stay again FOREVER.
 
+If you're thinking, "But now there's no way to win!", then you'd be right. In this simple, simple version of Blackjack, there is no way to win. Once you've completed this lab, feel free to make a second version where there IS a way to win. Maybe even include the real rules and compare the user's hand to the dealer's hand.
+
 ## Objective
 
 Practice conditional logic including nested conditionals by making a command line game that plays blackjack. This lab is test driven so just run `rspec` to get started.
