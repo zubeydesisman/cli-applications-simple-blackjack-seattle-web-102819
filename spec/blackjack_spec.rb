@@ -1,4 +1,3 @@
-require "pry"
 describe "#deal_card" do
   it "generates a random number between 1-11" do
     20.times do 
@@ -46,7 +45,7 @@ describe "#initial_round" do
   end
 
   it "returns the sum of two cards added togther" do
-    20.times do
+    3.times do
       two_cards = initial_round
       expect(two_cards).to be > 1
       expect(two_cards).to be < 23
