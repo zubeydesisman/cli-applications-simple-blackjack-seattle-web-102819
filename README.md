@@ -1,7 +1,7 @@
 ---
-tags: conditionals, cli, wip
+tags: conditionals, cli
 language: ruby
-resources: 0
+resources: 1
 ---
 
 # Simplified Blackjack
@@ -20,7 +20,13 @@ If you're thinking, "But now there's no way to win!", then you'd be right. In th
 
 ## Objective
 
-Practice conditional logic including nested conditionals by making a command line game that plays blackjack. This lab is test driven so just run `rspec` to get started.
+Practice conditional logic including nested conditionals by making a command line game that plays blackjack. 
+
+# Instructions
+
+Your code will go in `lib/blackjack.rb`. This lab is test driven so just run `rspec` to get started.
+
+Once every test is working, run  `ruby lib/runner.rb` from the root directory to play!
 
 ## Resources
 * [Wikipedia](http://en.wikipedia.org/) - [Blackjack](http://en.wikipedia.org/wiki/Blackjack)

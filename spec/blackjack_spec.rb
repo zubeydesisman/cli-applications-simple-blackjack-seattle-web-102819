@@ -97,3 +97,7 @@ describe "#hit?" do
     expect(hit?(7)).to be > 7
   end
 end
+
+describe "#runner" do
+
+end
