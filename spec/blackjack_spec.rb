@@ -1,5 +1,3 @@
-require "pry"
-
 describe "#deal_card" do
   it "generates a random number between 1-11" do
     20.times do 
@@ -64,7 +62,38 @@ end
 
 describe "#get_user_input" do
   it "returns the value of a `gets.chomp` method" do
-    my_input = get_user_input.stub!(:gets) { "s\n" }
-    expect(my_input).to eq("s")
+    ["h", "s", "exit"].each do |string|
+      with_stdin do |user|
+        user.puts string
+        expect(get_user_input).to eq(string)
+      end
+    end
+  end
+end
+
+describe "#hit?" do
+  before(:each) do
+    def get_user_input
+      "s"
+    end
+  end
+  it "calls on the '#prompt_user' method" do
+    expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
+    hit?(7)
+  end
+
+  it "returns an integer which is the card total" do
+    expect(hit?(20)).to eq(20)
+  end
+
+  it "calls on the '#get_user_input' and does not deal another card if user types 's'" do
+    expect(hit?(7)).to eq(7)
+  end
+
+  it "calls on the '#get_user_input' and deals another card when user types 'h'" do
+    def get_user_input
+      "h"
+    end
+    expect(hit?(7)).to be > 7
   end
 end

@@ -31,6 +31,10 @@ def welcome
   puts "Welcome to the Blackjack Table"
 end
 
+def prompt_user
+  puts "Type 'h' to hit or 's' to stay"
+end
+
 def initial_round
   first_round = deal_card + deal_card
   display_card_total(first_round)
@@ -52,10 +56,6 @@ end
 def invalid_command
   puts "Sorry, not a valid command"
   hit?(card_total)
-end
-
-def prompt_user
-  puts "Type 'h' to hit or 's' to stay"
 end
 
 def get_user_input
