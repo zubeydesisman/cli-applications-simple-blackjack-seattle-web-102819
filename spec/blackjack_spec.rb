@@ -118,7 +118,6 @@ describe "#runner" do
 
     expect(self).to receive(:deal_card).at_least(3).times.and_return(10)
     expect(self).to receive(:get_user_input).and_return("h")
-    # expect(self).to receive(:initial_round).and_return(20)
 
     expect($stdout).to receive(:puts).with("Welcome to the Blackjack Table")
     expect($stdout).to receive(:puts).with("Your cards add up to 20")
