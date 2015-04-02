@@ -6,7 +6,7 @@ resources: 1
 
 # Simplified Blackjack - Procedural
 
-## Background
+## Background - Objectives
 
 In [Blackjack](http://en.wikipedia.org/wiki/Blackjack) the goal is to have a hand that is closer to 21 than the dealer's hand without ever exceeding a card total of 21. 
 
