@@ -4,7 +4,7 @@ language: ruby
 resources: 1
 ---
 
-# Simplified Blackjack
+# Simplified Blackjack - Procedural
 
 ## Background
 
