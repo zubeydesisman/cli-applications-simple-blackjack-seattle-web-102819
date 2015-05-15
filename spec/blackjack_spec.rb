@@ -63,10 +63,8 @@ end
 describe "#get_user_input" do
   it "returns the value of a `gets.chomp` method" do
     ["h", "s", "exit"].each do |string|
-      with_stdin do |user|
-        user.puts string
-        expect(get_user_input).to eq(string)
-      end
+      expect(self).to receive(:gets).and_return(string)
+      expect(get_user_input).to eq(string)
     end
   end
 end
