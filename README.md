@@ -1,9 +1,3 @@
----
-tags: conditionals, cli, looping, loops
-language: ruby
-resources: 1
----
-
 # Simplified Blackjack - Procedural
 
 ## Background - Objectives
