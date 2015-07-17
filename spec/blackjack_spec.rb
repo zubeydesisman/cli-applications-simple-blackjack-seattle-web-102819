@@ -1,3 +1,10 @@
+describe "#welcome" do
+  it "prints a welcome message to screen" do
+    expect($stdout).to receive(:puts).with("Welcome to the Blackjack Table")
+    welcome
+  end
+end
+
 describe "#deal_card" do
   it "generates a random number between 1-11" do
     20.times do 
@@ -24,17 +31,27 @@ describe "#display_card_total" do
   end
 end
 
-describe "#welcome" do
-  it "prints a welcome message to screen" do
-    expect($stdout).to receive(:puts).with("Welcome to the Blackjack Table")
-    welcome
-  end
-end
 
 describe "#prompt_user" do
   it "gives instructions for hitting or staying" do
     expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
     prompt_user
+  end
+end
+
+describe "#get_user_input" do
+  it "returns the value of a `gets.chomp` method" do
+    ["h", "s", "exit"].each do |string|
+      expect(self).to receive(:gets).and_return(string)
+      expect(get_user_input).to eq(string)
+    end
+  end
+end
+
+describe "#end_game" do
+  it "prints apology, card total, and thank you message" do
+    expect($stdout).to receive(:puts).with("Sorry, you hit 27. Thanks for playing!")
+    end_game(27)
   end
 end
 
@@ -51,22 +68,6 @@ describe "#initial_round" do
     initial_round
   end
 
-end
-
-describe "#end_game" do
-  it "prints apology, card total, and thank you message" do
-    expect($stdout).to receive(:puts).with("Sorry, you hit 27. Thanks for playing!")
-    end_game(27)
-  end
-end
-
-describe "#get_user_input" do
-  it "returns the value of a `gets.chomp` method" do
-    ["h", "s", "exit"].each do |string|
-      expect(self).to receive(:gets).and_return(string)
-      expect(get_user_input).to eq(string)
-    end
-  end
 end
 
 describe "#hit?" do
