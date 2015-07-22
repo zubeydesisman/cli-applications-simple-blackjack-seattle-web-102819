@@ -22,7 +22,7 @@ If you're thinking, "But now there's no way to win!", then you'd be right. In th
 **A Brief Note:** This is a brief introduction to command line apps. It's okay if you don't understand every think we discuss here. We're going to take a more in depth look in your next command line application.
 
 
-The CLI, or command line interface, is the interaction between a user and their computer or a program via the command line. You've already become comfortable interacting with the command line to navigate files, connect with Github and test your programs. In a command line application, the user will respond to a prompt that your program will output to the terminal. The user's response, or input, will be received by the application and the application will then carry out the programmed response based on that input.
+The CLI, or command line interface, is the interaction between a user and their computer or a program via the command line. You've already become comfortable interacting with the command line to navigate files and connect with Github and test your programs. In a command line application, the user will respond to a prompt that your program will output to the terminal. The user's response, or input, will be received by the application and the application will then carry out the programmed response based on that input.
 
 In fact, you've already played around with a command line app in one of the previous lessons––Looping: Break and Gets. When you executed the `annoying_program` file, the `puts` method output some text to the terminal and the `gets` method collected and saved the user's input to the terminal. We'll be using the same techniques to build our simple blackjack game. 
 
