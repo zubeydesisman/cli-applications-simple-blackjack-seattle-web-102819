@@ -52,7 +52,7 @@ You already know that your Blackjack command line app will rely on the user's in
 
 Stubbing refers to the fake implementation of a method. In this case, we will stub the `puts` method to trick our test suite into thinking the stdout file has received the `puts` method *and* to trick our test suite into recognizing that the `gets` method has been used. 
 
-In the next command line app that you will build, we will discuss stubbing much in greater detail. For now, just understand the following about how to read our test suite: 
+In the next command line app that you will build, we will discuss stubbing in much greater detail. For now, just understand the following about how to read our test suite: 
 
 **First:** 
 
