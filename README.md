@@ -104,7 +104,7 @@ describe "#display_card_total" do
 This test is telling us the following things about the method called `display_card_total`:
 
 *  The method should take in an argument of a number that is the card total. 
-*  The method should use `puts` to output that card total as part of the phrase `"Your card add up to #{card total}"`.
+*  The method should use `puts` to output that card total as part of the phrase `"Your cards add up to #{card total}"`.
 
 #### A Note on Calling Methods Within Methods:
 
