@@ -37,8 +37,8 @@ How do the puts and print methods actually output text to your console? They use
 
 You can absolutely employ puts and print without understanding everything that was just described. But now you have a basic sense of what is happening under the hood of these methods.
  -what is a command line app? include idea of bin/runner file. 
--how to puts and gets allow a user to interact with the program
--how will our test suite fake it
+-how do puts and gets allow a user to interact with the program?
+-how will our test suite fake it?
 
 ### Running our Command Line App
 
