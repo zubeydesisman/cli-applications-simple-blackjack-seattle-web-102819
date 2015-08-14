@@ -42,7 +42,7 @@ You can absolutely employ puts and print without understanding everything that w
 
 ### Running our Command Line App
 
-We already know that we can run, or execute the code in, a Ruby file from the command line by typing `ruby <file name>`. In a command line app, it is conventional to create a special file that has one responsibility: executing the code that constitutes our program. You can think about this in terms of the separation of concerns principle. The separation of concerns principle is a programming design principle for separating the responsibilities and functionalities into discreet sections. For our command line app, that means that we have one file that defines the methods we will use to play our blackjack game and a *separate* file that calls those methods. Then, we will play our game by executing the that "runner" file via `ruby runner.rb` in the command line. 
+We already know that we can run, or execute the code in a Ruby file from the command line by typing `ruby <file name>`. In a command line app, it is conventional to create a special file that has one responsibility: executing the code that constitutes our program. You can think about this in terms of the separation of concerns principle. The separation of concerns principle is a programming design principle for separating the responsibilities and functionalities into discreet sections. For our command line app, that means that we have one file that defines the methods we will use to play our blackjack game and a *separate* file that calls those methods. Then, we will play our game by executing the that "runner" file via `ruby runner.rb` in the command line. 
 
 ### Testing our Command Line App
 
