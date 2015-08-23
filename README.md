@@ -112,7 +112,7 @@ Remember that you can call methods within methods. In other words, if you define
 
 ### Using Looping: Defining the the game play via the `run` method
 
-Once you get all of the tests in the first part of the test suite passing, you've build the building blocks of our blackjack game. Now, we need to put them all together in the `run` method. The `run` method is responsible for enacting the game play *until* the user looses. Remember that a player looses if the sum of their cards exceeds 21. 
+Once you get all of the tests in the first part of the test suite passing, you've built the building blocks of our blackjack game. Now, we need to put them all together in the `run` method. The `run` method is responsible for enacting the game play *until* the user looses. Remember that a player loses if the sum of their cards exceeds 21. 
 
 Here's how we want our game to run: 
 
