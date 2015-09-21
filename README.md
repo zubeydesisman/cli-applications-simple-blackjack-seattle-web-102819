@@ -36,9 +36,6 @@ How do the puts and print methods actually output text to your console? They use
 >Your computer has an stdout file that communicates with your operating system. So, puts and print actually send output to the $stdout variable. The $stdout variable sends that information to the stdout file on your computer which in turn communicates with your operating system which in turn outputs that information to the console.
 
 You can absolutely employ puts and print without understanding everything that was just described. But now you have a basic sense of what is happening under the hood of these methods.
- -what is a command line app? include idea of bin/runner file. 
--how do puts and gets allow a user to interact with the program?
--how will our test suite fake it?
 
 ### Running our Command Line App
 
