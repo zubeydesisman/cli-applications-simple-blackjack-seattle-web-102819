@@ -36,13 +36,13 @@ How do the puts and print methods actually output text to your console? They use
 >Your computer has an stdout file that communicates with your operating system. So, puts and print actually send output to the $stdout variable. The $stdout variable sends that information to the stdout file on your computer which in turn communicates with your operating system which in turn outputs that information to the console.
 
 You can absolutely employ puts and print without understanding everything that was just described. But now you have a basic sense of what is happening under the hood of these methods.
- -what is a command line app? include idea of bin/runner file. 
--how do puts and gets allow a user to interact with the program?
--how will our test suite fake it?
+-What is a command line app? include idea of bin/runner file. 
+-How do puts and gets allow a user to interact with the program?
+-How will our test suite fake it?
 
 ### Running our Command Line App
 
-We already know that we can run, or execute the code in, a Ruby file from the command line by typing `ruby <file name>`. In a command line app, it is conventional to create a special file that has one responsibility: executing the code that constitutes our program. You can think about this in terms of the separation of concerns principle. The separation of concerns principle is a programming design principle for separating the responsibilities and functionalities into discreet sections. For our command line app, that means that we have one file that defines the methods we will use to play our blackjack game and a *separate* file that calls those methods. Then, we will play our game by executing the that "runner" file via `ruby runner.rb` in the command line. 
+We already know that we can run, or execute the code in, a Ruby file from the command line by typing `ruby <file name>`. In a command line app, it is conventional to create a special file that has one responsibility: executing the code that constitutes our program. You can think about this in terms of the separation of concerns principle. The separation of concerns principle is a programming design principle for separating the responsibilities and functionalities into discreet sections. For our command line app, that means that we have one file that defines the methods we will use to play our blackjack game and a *separate* file that calls those methods. Then, we will play our game by executing the  "runner" file via `ruby runner.rb` in the command line. 
 
 ### Testing our Command Line App
 
