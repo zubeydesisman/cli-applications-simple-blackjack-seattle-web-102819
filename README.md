@@ -11,7 +11,7 @@ In [Blackjack](http://en.wikipedia.org/wiki/Blackjack) the goal is to have a han
 
 However, in this simplified version of Blackjack, we'll cut out that "compare with the dealer's hand" part and pretend that the goal of the game is to have a card total of, or very close to, but never exceeding, 21.
 
-To start, a player gets dealt two cards, each of which have values between 1-10. Then, the player is asked if they want to "hit" (get another card dealt to them), or "stay".
+To start, a player gets dealt two cards, each of which have values between 1-11. Then, the player is asked if they want to "hit" (get another card dealt to them), or "stay".
 
 If they hit, they get dealt another card. If the sum of their three cards exceeds 21, they've lost. If it does not, they can decide to hit or stay again FOREVER.
 
