@@ -11,7 +11,7 @@ In [Blackjack](http://en.wikipedia.org/wiki/Blackjack) the goal is to have a han
 
 However, in this simplified version of Blackjack, we'll cut out that "compare with the dealer's hand" part and pretend that the goal of the game is to have a card total of, or very close to, but never exceeding, 21.
 
-To start, a player gets dealt two cards, each of which have values between 1-10. Then, the player is asked if they want to "hit" (get another card dealt to them), or "stay".
+To start, a player gets dealt two cards, each of which have values between 1-11. Then, the player is asked if they want to "hit" (get another card dealt to them), or "stay".
 
 If they hit, they get dealt another card. If the sum of their three cards exceeds 21, they've lost. If it does not, they can decide to hit or stay again FOREVER.
 
@@ -114,7 +114,7 @@ Once you get all of the tests in the first part of the test suite passing, you'v
 Here's how we want our game to run: 
 
 1. Welcome the user
-2. Deal them their first two cards, i.e. their `initial_turn`
+2. Deal them their first two cards, i.e. their `initial_round`
 3. Ask them if they want to hit or stay
 4. If they want to hit, deal another card
 5. If they want to stay, ask them again!
