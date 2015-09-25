@@ -114,7 +114,7 @@ Once you get all of the tests in the first part of the test suite passing, you'v
 Here's how we want our game to run: 
 
 1. Welcome the user
-2. Deal them their first two cards, i.e. their `initial_turn`
+2. Deal them their first two cards, i.e. their `initial_round`
 3. Ask them if they want to hit or stay
 4. If they want to hit, deal another card
 5. If they want to stay, ask them again!
