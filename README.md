@@ -11,7 +11,7 @@ In [Blackjack](http://en.wikipedia.org/wiki/Blackjack) the goal is to have a han
 
 However, in this simplified version of Blackjack, we'll cut out that "compare with the dealer's hand" part and pretend that the goal of the game is to have a card total of, or very close to, but never exceeding, 21.
 
-To start, a player gets dealt two cards, each of which have values between 1-10. Then, the player is asked if they want to "hit" (get another card dealt to them), or "stay".
+To start, a player gets dealt two cards, each of which have values between 1-11. Then, the player is asked if they want to "hit" (get another card dealt to them), or "stay".
 
 If they hit, they get dealt another card. If the sum of their three cards exceeds 21, they've lost. If it does not, they can decide to hit or stay again FOREVER.
 
@@ -36,9 +36,6 @@ How do the puts and print methods actually output text to your console? They use
 >Your computer has an stdout file that communicates with your operating system. So, puts and print actually send output to the $stdout variable. The $stdout variable sends that information to the stdout file on your computer which in turn communicates with your operating system which in turn outputs that information to the console.
 
 You can absolutely employ puts and print without understanding everything that was just described. But now you have a basic sense of what is happening under the hood of these methods.
- -what is a command line app? include idea of bin/runner file. 
--how do puts and gets allow a user to interact with the program?
--how will our test suite fake it?
 
 ### Running our Command Line App
 
@@ -160,6 +157,7 @@ This method uses `puts` to output the message: "Welcome to the Blackjack Table".
 
 This method generates and returns a random number between 1 and 11. 
 
+
 #### The `#prompt_user` Method
 
 This method asks the user for input by outputting the phrase "Type 'h' to hit or 's' to stay". 
@@ -197,7 +195,7 @@ Once you get all of the tests in the first part of the test suite passing, you h
 Here's how we want our game to run: 
 
 1. Welcome the user
-2. Deal them their first two cards, i.e. their `initial_turn`
+2. Deal them their first two cards, i.e. their `initial_round`
 3. Ask them if they want to hit or stay
 4. If they want to hit, deal another card
 5. If they want to stay, ask them again!
