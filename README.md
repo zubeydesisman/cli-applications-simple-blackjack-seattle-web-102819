@@ -190,7 +190,7 @@ In either case, our method should then return the player's current card total.
 
 ### The Runner Method: `#run`
 
-Once you get all of the tests in the first part of the test suite passing, you have built the building blocks of our blackjack game. Now, we need to put them all together in the `#run` method. The `#run` method is responsible for enacting the game play *until* the user looses. Remember that a player looses if the sum of their cards exceeds 21. 
+Once you get all of the tests in the first part of the test suite passing, you have built the building blocks of our blackjack game. Now, we need to put them all together in the `#run` method. The `#run` method is responsible for enacting the game play *until* the user loses. Remember that a player loses if the sum of their cards exceeds 21. 
 
 Here's how we want our game to run: 
 
