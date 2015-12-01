@@ -96,7 +96,7 @@ To run our program, we need to call all of these methods. Instead of calling eac
 def run_program
 	welcome
 	ask_name
-	name store_name
+	name = store_name
 	personalized_welcome(name)
 end
 ```
@@ -188,9 +188,9 @@ If the player's input is *neither* `'h'` *nor* `'s'`, call on the `#invalid_comm
 
 In either case, our method should then return the player's current card total. 
 
-### The Runner Method: `#run`
+### The Runner Method: `#runner`
 
-Once you get all of the tests in the first part of the test suite passing, you have built the building blocks of our blackjack game. Now, we need to put them all together in the `#run` method. The `#run` method is responsible for enacting the game play *until* the user looses. Remember that a player looses if the sum of their cards exceeds 21. 
+Once you get all of the tests in the first part of the test suite passing, you have built the building blocks of our blackjack game. Now, we need to put them all together in the `#runner` method. The `#runner` method is responsible for enacting the game play *until* the user loses. Remember that a player loses if the sum of their cards exceeds 21. 
 
 Here's how we want our game to run: 
 
@@ -201,7 +201,7 @@ Here's how we want our game to run:
 5. If they want to stay, ask them again!
 6. If their card total exceeds 21, the game ends. 
 
-Use a loop constructor (I'd recommend `until`, but that is by no means your only option) to enact the above game play in the `run` method. Then, check out the `lib/runner.rb` file. Notice that it is simply calling the `run` method. The runner file will call the `run` method which should in turn utilize all the other methods you built!
+Use a loop constructor (I'd recommend `until`, but that is by no means your only option) to enact the above game play in the `#runner` method. Then, check out the `lib/runner.rb` file. Notice that it is simply calling the `#runner` method. The runner file will call the `#runner` method which should in turn utilize all the other methods you built!
 
 
 ## Resources
