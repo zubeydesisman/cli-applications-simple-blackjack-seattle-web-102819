@@ -96,7 +96,7 @@ To run our program, we need to call all of these methods. Instead of calling eac
 def run_program
 	welcome
 	ask_name
-	name store_name
+	name = store_name
 	personalized_welcome(name)
 end
 ```
