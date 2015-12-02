@@ -206,3 +206,5 @@ Use a loop constructor (I'd recommend `until`, but that is by no means your only
 
 ## Resources
 * [Wikipedia](http://en.wikipedia.org/) - [Blackjack](http://en.wikipedia.org/wiki/Blackjack)
+
+<a href='https://learn.co/lessons/simple-blackjack-cli' data-visibility='hidden'>View this lesson on Learn.co</a>
