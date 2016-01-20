@@ -28,7 +28,7 @@ In fact, you've already played around with a command line app in one of the prev
 
 ### How does `puts` output text to the terminal?
 
-Here's a brief reminder from an earlier lesson––Puts, Print and Return (from the Methods and Variables unit). 
+Here's a brief recap from an earlier lesson––Puts, Print and Return (from the Methods and Variables unit). 
 
 >
 How do the puts and print methods actually output text to your console? They use the $stdout global variable provided to us by Ruby. You don't need to worry about global variables right now. For the purposes of understanding how puts and print work, we just need to understand the following:
