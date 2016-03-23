@@ -43,23 +43,24 @@ def end_game(card_total)
   puts "Sorry, you hit #{card_total}. Thanks for playing!"
 end
 
-
-
 def hit?(card_total)
   prompt_user
-  user_input = get_user_input
-  if user_input == "h"
-    card_total += deal_card
-  elsif user_input == "s"
-    card_total
-  else
+  input = get_user_input
+  until input == 'h' || input == 's'
     invalid_command
+    prompt_user
+    input = get_user_input
+  end
+  if input == 'h'
+    card_total += deal_card
+  elsif input == 's'
+    card_total
   end
 end
 
+
 def invalid_command
-  puts "Sorry, not a valid command"
-  get_user_input
+  puts "Please enter a valid command"
 end
 
 ##########
