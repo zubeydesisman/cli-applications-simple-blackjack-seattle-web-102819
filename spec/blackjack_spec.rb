@@ -99,6 +99,18 @@ describe "#hit?" do
     expect(hit?(7)).to eq(14)
   end
 
+  it "calls on #prompt_user then #get_user_input after invalid input" do
+    allow(self).to receive(:get_user_input).and_return('z', 's')
+
+    expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay") 
+    expect(self).to receive(:get_user_input).and_return("z")
+    expect($stdout).to receive(:puts).with("Please enter a valid command")
+    expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
+    expect(self).to receive(:get_user_input).and_return("s")
+
+    hit?(7) 
+  end
+
 end
 
 describe "#runner" do
