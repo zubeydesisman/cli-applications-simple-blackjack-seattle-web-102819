@@ -80,25 +80,25 @@ programming design principle for separating the responsibilities and
 functionalities into discrete sections. For our command line app, that means
 that we have one file that defines the methods we will use to play our blackjack
 game and a *separate* file that calls those methods. Then, we will play our game
-by executing the that "runner" file via `ruby runner.rb` in the command line. 
+by executing the that "runner" file via `ruby runner.rb` in the command line.
 
 ### Testing Our Command Line App
 
 You already know that your Blackjack command line app will rely on the user's
 input to run. In order to test our program using RSpec, we need a way for our
 test suite to fake the user's input, i.e. fake the implementation of the `puts`
-and `gets` methods. This is called **stubbing**. 
+and `gets` methods. This is called **stubbing**.
 
 #### What is Stubbing?
 
 Stubbing refers to the fake implementation of a method. In this case, we will
 stub the `puts` method to trick our test suite into thinking the stdout file has
 received the `puts` method *and* to trick our test suite into recognizing that
-the `gets` method has been used. 
+the `gets` method has been used.
 
 In the next command line app that you will build, we will discuss stubbing in
 much greater detail. For now, just understand the following about how to read
-our test suite: 
+our test suite:
 
 **First:**
 
@@ -107,7 +107,7 @@ expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
 ```
 
 The above line means that the test suite is expecting the execution of a certain
-method to use the `puts` method to output "Type 'h' to hit or 's' to stay". 
+method to use the `puts` method to output "Type 'h' to hit or 's' to stay".
 
 **Second:**
 
@@ -117,7 +117,7 @@ expect(self).to receive(:get_user_input).and_return("s")
 
 The above line means that the test suite is expecting the execution of a certain
 method to use the `gets` method to store the user's input and return that input
-(which in this particular test happens to be "s"). 
+(which in this particular test happens to be "s").
 
 ## Enacting a Ruby Program Via a "Runner" Method
 
@@ -135,19 +135,19 @@ Our shorter methods might look like this:
 
 ```ruby
 def welcome
-	puts "HI!"
+  puts "HI!"
 end
 
 def ask_name
-	puts "What is your name?"
+  puts "What is your name?"
 end
 
 def store_name
-	gets.chomp
+  gets.chomp
 end
 
 def personalized_welcome(name)
-	puts "HI, #{name}"
+  puts "HI, #{name}"
 end
 ```
 
@@ -157,10 +157,10 @@ enact our program, we only have to invoke our one wrapper or **runner** method.
 
 ```ruby
 def run_program
-	welcome
-	ask_name
-	name = store_name
-	personalized_welcome(name)
+  welcome
+  ask_name
+  name = store_name
+  personalized_welcome(name)
 end
 ```
 
@@ -178,11 +178,11 @@ game. In the first part of this lab, we'll be defining our smaller methods, each
 of which is responsible for one discrete unit of the game. These methods are
 called **helper methods**. Once we have all of our helper method tests passing,
 we'll define the runner method that calls on each of the helper methods in turn
-to make the program run. 
+to make the program run.
 
 ## Instructions
 
-All your code will go in `lib/blackjack.rb`. 
+All your code will go in `lib/blackjack.rb`.
 
 Once every test is working, run  `ruby lib/runner.rb` from the root directory to play!
 
@@ -214,8 +214,8 @@ describe "#display_card_total" do
 
 This test is telling us the following things about the method called `display_card_total`:
 
-*  The method should take in an argument of a number that is the card total. 
-*  The method should use `puts` to output that card total as part of the phrase
+- The method should take in an argument of a number that is the card total.
+- The method should use `puts` to output that card total as part of the phrase
    `"Your cards add up to #{card total}"`.
 
 ### Defining Our Methods
@@ -226,11 +226,11 @@ This method uses `puts` to output the message: "Welcome to the Blackjack Table".
 
 #### The `#deal_card` Method
 
-This method generates and returns a random number between 1 and 11. 
+This method generates and returns a random number between 1 and 11.
 
 #### The `#prompt_user` Method
 
-This method asks the user for input by outputting the phrase "Type 'h' to hit or 's' to stay". 
+This method asks the user for input by outputting the phrase "Type 'h' to hit or 's' to stay".
 
 #### The `#display_card_total` Method
 
@@ -239,14 +239,14 @@ add up to #{card_total}". The number that this method takes in as an argument is
 the sum of a players cards. This method will be *called inside another method*,
 at which point the real sum of a player's cards will be passed in as an
 argument. This is not important right now. Just define the method to take in a
-number and puts out the appropriate phrase using that number. 
+number and puts out the appropriate phrase using that number.
 
 #### The `#get_user_input` Method
 
 This method is very basic. It only needs to use the `gets` method to capture the
 user's input. Eventually, when we take all of these helper methods and assemble
 them into the larger method that enacts the gameplay, this method will be used
-*after* we prompt the user for input to actually capture and store their input. 
+*after* we prompt the user for input to actually capture and store their input.
 
 #### The `#end_game` Method
 
@@ -260,7 +260,7 @@ This method represents the first round of the game for a given player. It should
 call on the `#deal_card` method twice, use the `#display_card_total` method to
 `puts` out the sum *and then* return the sum. This method will, therefore, call on
 two other helper methods, `#deal_card` and `#display_card_total`, which takes in
-an argument of the sum of both invocations of `#deal_card`. 
+an argument of the sum of both invocations of `#deal_card`.
 
 #### The `#hit?` Method
 
@@ -273,7 +273,7 @@ input and the `#get_user_input` method to get and store the user's input. Now we
 need to implement some logic. If the player's input is `'s'`, we don't deal a
 new card. If the player's input is `'h'`, we do need to deal a new card. In this
 case, use the `#deal_card` method to deal a new card and increment the player's
-card total by whatever number is returned by `#deal_card`. 
+card total by whatever number is returned by `#deal_card`.
 
 If the player's input is *neither* `'h'` *nor* `'s'`, call on the
 `#invalid_command` method to output the phrase "Please enter a valid command".
@@ -307,6 +307,6 @@ the other methods you built!
 
 ## Resources
 
-* [Wikipedia](http://en.wikipedia.org/) - [Blackjack](http://en.wikipedia.org/wiki/Blackjack)
+- [Wikipedia](http://en.wikipedia.org/) - [Blackjack](http://en.wikipedia.org/wiki/Blackjack)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/simple-blackjack-cli'>Blackjack CLI</a> on Learn.co and start learning to code for free.</p>
