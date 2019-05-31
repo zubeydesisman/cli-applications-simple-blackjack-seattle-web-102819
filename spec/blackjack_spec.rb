@@ -70,6 +70,13 @@ describe "#initial_round" do
 
 end
 
+describe "invalid_command" do
+  it "prints 'Please enter a valid command' when called" do
+    expect($stdout).to receive(:puts).with("Please enter a valid command")
+    invalid_command
+  end
+end
+
 describe "#hit?" do
   before(:each) do
     def get_user_input
