@@ -13,7 +13,7 @@ total of 21.
 
 However, in this simplified version of Blackjack, we'll cut out that "compare
 with the dealer's hand" part and pretend that the goal of the game is to have a
-card total of, or very close to, but never exceeding 21.
+card total of, or very close to, _but never exceeding_, 21.
 
 To start, a player gets dealt two cards, each of which has values between 1-11.
 Then, the player is asked if they want to "hit" (get another card dealt to
@@ -37,41 +37,32 @@ in-depth look in your next command line application.
 
 The CLI, or command line interface, is the interaction between a user and their
 computer or a program via the command line. You've already become comfortable
-interacting with the command line to navigate files and connect with Github and
+interacting with the command line to navigate files and connect with GitHub and
 test your programs. In a command line application, the user will respond to a
 prompt that your program will output to the terminal. The user's response, or
 input, will be received by the application and the application will then carry
 out the programmed response based on that input.
 
-In fact, you've already played around with a command line app in one of the
-previous lessons––Looping: Break and Gets. When you executed the
-`annoying_program` file, the `puts` method output some text to the terminal and
-the `gets` method collected and saved the user's input to the terminal. We'll be
-using the same techniques to build our simple blackjack game.
-
 ### How Does `puts` Output Text to the Terminal?
 
-Here's a brief recap from an earlier lesson––Puts, Print, and Return (from the
-Methods and Variables unit).
-
-How do the puts and print methods actually output text to your console? They use
-the $stdout global variable provided to us by Ruby. You don't need to worry
+How do the `puts` and `print` methods actually output text to your console? They
+use the `$stdout` global variable provided to us by Ruby. You don't need to worry
 about global variables right now. For the purposes of understanding how puts and
 print work, we just need to understand the following:
 
-> Your computer has a stdout file that communicates with your operating system.
-> So, puts and print actually send output to the $stdout variable. The $stdout
-> variable sends that information to the stdout file on your computer which in
+> Your computer has a `stdout` file that communicates with your operating system.
+> So, `puts` and `print` actually send output to the `$stdout` variable. The `$stdout`
+> variable sends that information to the `stdout` file on your computer which in
 > turn communicates with your operating system which in turn outputs that
 > information to the console.
 
-You can absolutely employ puts and print without understanding everything that
-was just described. But now you have a basic sense of what is happening under
+You can absolutely employ `puts` and `print` without understanding everything that
+was just described. But now, you have a basic sense of what is happening under
 the hood of these methods.
 
 ### Running Our Command Line App
 
-We already know that we can run, or execute the code in, a Ruby file from the
+We already know that we can run, or execute the code in a Ruby file from the
 command line by typing `ruby <file name>`. In a command line app, it is
 conventional to create a special file that has one responsibility: executing the
 code that constitutes our program. You can think about this in terms of the
@@ -92,13 +83,9 @@ and `gets` methods. This is called **stubbing**.
 #### What is Stubbing?
 
 Stubbing refers to the fake implementation of a method. In this case, we will
-stub the `puts` method to trick our test suite into thinking the stdout file has
+stub the `puts` method to trick our test suite into thinking the `stdout` file has
 received the `puts` method *and* to trick our test suite into recognizing that
 the `gets` method has been used.
-
-In the next command line app that you will build, we will discuss stubbing in
-much greater detail. For now, just understand the following about how to read
-our test suite:
 
 **First:**
 
@@ -115,9 +102,9 @@ method to use the `puts` method to output "Type 'h' to hit or 's' to stay".
 expect(self).to receive(:get_user_input).and_return("s")
 ```
 
-The above line means that the test suite is expecting the execution of a certain
-method to use the `gets` method to store the user's input and return that input
-(which in this particular test happens to be "s").
+The above line means that the test suite it_self_ is expecting the execution of
+a certain method, `:get_user_input`, to use the `gets` method to store the user's
+input and return that input (which in this particular test happens to be `"s"`).
 
 ## Enacting a Ruby Program Via a "Runner" Method
 
@@ -164,7 +151,7 @@ def run_program
 end
 ```
 
-The `#run_program` method can then be invoked inside of a runner file, discussed
+The `run_program` method can then be invoked inside of a runner file, discussed
 above. Such a file would only need to contain one line!
 
 ```ruby
@@ -184,7 +171,8 @@ to make the program run.
 
 All your code will go in `lib/blackjack.rb`.
 
-Once every test is working, run  `ruby lib/runner.rb` from the root directory to play!
+Once every test is working, run `ruby lib/runner.rb` from the root directory to
+play!
 
 ### Using TDD
 
@@ -212,7 +200,8 @@ describe "#display_card_total" do
   ....
 ```
 
-This test is telling us the following things about the method called `display_card_total`:
+This test is telling us the following things about the method called
+`display_card_total`:
 
 - The method should take in an argument of a number that is the card total.
 - The method should use `puts` to output that card total as part of the phrase
@@ -220,19 +209,15 @@ This test is telling us the following things about the method called `display_ca
 
 ### Defining Our Methods
 
-#### The `#welcome` Method
+#### The `welcome` Method
 
 This method uses `puts` to output the message: "Welcome to the Blackjack Table".
 
-#### The `#deal_card` Method
+#### The `deal_card` Method
 
 This method generates and returns a random number between 1 and 11.
 
-#### The `#prompt_user` Method
-
-This method asks the user for input by outputting the phrase "Type 'h' to hit or 's' to stay".
-
-#### The `#display_card_total` Method
+#### The `display_card_total` Method
 
 This method accepts an argument of a number and puts out the phrase "Your cards
 add up to #{card_total}". The number that this method takes in as an argument is
@@ -241,52 +226,57 @@ at which point the real sum of a player's cards will be passed in as an
 argument. This is not important right now. Just define the method to take in a
 number and puts out the appropriate phrase using that number.
 
-#### The `#get_user_input` Method
+#### The `prompt_user` Method
+
+This method asks the user for input by outputting the phrase "Type 'h' to hit or
+'s' to stay".
+
+#### The `get_user_input` Method
 
 This method is very basic. It only needs to use the `gets` method to capture the
 user's input. Eventually, when we take all of these helper methods and assemble
 them into the larger method that enacts the gameplay, this method will be used
 *after* we prompt the user for input to actually capture and store their input.
 
-#### The `#end_game` Method
+#### The `end_game` Method
 
 This method takes in an argument of a number, which will be a player's card
 total, and outputs the message "Sorry, you hit #{card_total}. Thanks for
 playing!"
 
-#### The `#initial_round` Method
+#### The `initial_round` Method
 
 This method represents the first round of the game for a given player. It should
-call on the `#deal_card` method twice, use the `#display_card_total` method to
+call on the `deal_card` method twice, use the `display_card_total` method to
 `puts` out the sum *and then* return the sum. This method will, therefore, call on
-two other helper methods, `#deal_card` and `#display_card_total`, which takes in
-an argument of the sum of both invocations of `#deal_card`.
+two other helper methods, `deal_card` and `display_card_total`, which takes in
+an argument of the sum of both invocations of `deal_card`.
 
-#### The `#hit?` Method
+#### The `hit?` Method
 
 This method is a bit more complex. It should take in an argument of the player's
-current card total. So, set up your `#hit?` method to take in an argument of a
+current card total. So, set up your `hit?` method to take in an argument of a
 number.
 
-Then, the method should use the `#prompt_user` method to prompt the user for
-input and the `#get_user_input` method to get and store the user's input. Now we
+Then, the method should use the `prompt_user` method to prompt the user for
+input and the `get_user_input` method to get and store the user's input. Now we
 need to implement some logic. If the player's input is `'s'`, we don't deal a
 new card. If the player's input is `'h'`, we do need to deal a new card. In this
-case, use the `#deal_card` method to deal a new card and increment the player's
-card total by whatever number is returned by `#deal_card`.
+case, use the `deal_card` method to deal a new card and increment the player's
+card total by whatever number is returned by `deal_card`.
 
 If the player's input is *neither* `'h'` *nor* `'s'`, call on the
-`#invalid_command` method to output the phrase "Please enter a valid command".
-Then, call on the `#prompt_user` method again to remind your user what a valid
+`invalid_command` method to output the phrase "Please enter a valid command".
+Then, call on the `prompt_user` method again to remind your user what a valid
 command is.  
 
 In either case, our method should then return the player's current card total.
 
-### The Runner Method: `#runner`
+### The Runner Method: `runner`
 
 Once you get all of the tests in the first part of the test suite passing, you
 have built the building blocks of our blackjack game. Now, we need to put them
-all together in the `#runner` method. The `#runner` method is responsible for
+all together in the `runner` method. The `runner` method is responsible for
 enacting the gameplay *until* the user loses. Remember that a player loses if
 the sum of their cards exceeds 21.
 
@@ -295,15 +285,15 @@ Here's how we want our game to run:
 1. Welcome the user
 2. Deal them their first two cards, i.e. their `initial_round`
 3. Ask them if they want to hit or stay
-4. If they want to hit, deal another card
-5. If they want to stay, ask them again!
+4. If they want to stay, ask them again!
+5. If they want to hit, deal another card and display the new total
 6. If their card total exceeds 21, the game ends.
 
 Use a loop constructor (I'd recommend `until`, but that is by no means your only
-option) to enact the above gameplay in the `#runner` method. Then, check out
-the `lib/runner.rb` file. Notice that it is simply calling the `#runner` method.
-The runner file will call the `#runner` method which should, in turn, utilize all
-the other methods you built!
+option) to enact the above gameplay in the `runner` method. Then, check out the
+`lib/runner.rb` file. Notice that it is simply calling the `runner` method. The
+runner file will call the `runner` method which should, in turn, utilize all the
+other methods you built!
 
 ## Resources
 
