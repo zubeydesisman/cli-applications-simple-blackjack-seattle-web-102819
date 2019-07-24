@@ -100,7 +100,7 @@ describe "#hit?" do
     expect(hit?(7)).to eq(14)
   end
 
-  it "displays the invalid command message if a user inputs something other than 'h' or 's'" do
+  it "displays the invalid command message and prompts the user again if a user inputs something other than 'h' or 's'" do
     expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
     expect($stdout).to receive(:puts).with("Please enter a valid command")
     expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
