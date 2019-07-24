@@ -78,12 +78,6 @@ describe "invalid_command" do
 end
 
 describe "#hit?" do
-  before(:each) do
-    def get_user_input
-      "s"
-    end
-  end
-
   it "calls on #prompt_user then #get_user_input" do
     expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
     expect(self).to receive(:get_user_input).and_return("s")
@@ -106,10 +100,19 @@ describe "#hit?" do
     expect(hit?(7)).to eq(14)
   end
 
+  it "displays the invalid command message if a user inputs something other than 'h' or 's'" do
+    expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
+    expect($stdout).to receive(:puts).with("Please enter a valid command")
+    expect($stdout).to receive(:puts).with("Type 'h' to hit or 's' to stay")
+    expect(self).to receive(:get_user_input).and_return("k")
+    expect(self).to receive(:get_user_input).and_return("s")
+    
+    hit?(7)
+  end
+
 end
 
 describe "#runner" do
-
   before(:each) do
     def get_user_input
       "h"
