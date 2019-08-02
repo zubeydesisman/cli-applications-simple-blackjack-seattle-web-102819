@@ -11,6 +11,10 @@ In [Blackjack](http://en.wikipedia.org/wiki/Blackjack), the goal is to have a
 hand that is closer to 21 than the dealer's hand without ever exceeding a card
 total of 21.
 
+<p align="center">
+  <img width="500" src="https://curriculum-content.s3.amazonaws.com/cli-applications/simple-blackjack/Image_15_BlackJack.png">
+</p>
+
 However, in this simplified version of Blackjack, we'll cut out that "compare
 with the dealer's hand" part and pretend that the goal of the game is to have a
 card total of, or very close to, _but never exceeding_, 21.
